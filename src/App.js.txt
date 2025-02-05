@@ -1,0 +1,30 @@
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import PlayGame from "./components/PlayGame";
+import HighScore from "./components/HighScore";
+import HowToPlay from "./components/HowToPlay";
+
+export default function App() {
+  return (
+    <Router>
+      <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-4">
+        <h1 className="text-3xl font-bold mb-6">Hangman Game</h1>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/play" element={<PlayGame />} />
+          <Route path="/highscore" element={<HighScore />} />
+          <Route path="/how-to-play" element={<HowToPlay />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+    <div className="flex flex-col items-center space-y-4">
+      <Link to="/play" className="btn">Play Game</Link>
+      <Link to="/highscore" className="btn">High Score</Link>
+      <Link to="/how-to-play" className="btn">How to Play</Link>
+    </div>
+  );
+}

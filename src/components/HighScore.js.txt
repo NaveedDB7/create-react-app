@@ -1,0 +1,13 @@
+export default function HighScore() {
+  const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  return (
+    <div className="flex flex-col items-center">
+      <h2 className="text-xl font-bold">High Scores</h2>
+      <ul>
+        {highScores.length > 0 ? highScores.map((score, index) => (
+          <li key={index}>{score.word} - Mistakes: {score.mistakes}</li>
+        )) : <p>No high scores yet.</p>}
+      </ul>
+    </div>
+  );
+}

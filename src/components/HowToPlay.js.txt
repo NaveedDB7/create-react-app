@@ -1,0 +1,9 @@
+export default function HowToPlay() {
+  return (
+    <div className="flex flex-col items-center">
+      <h2 className="text-xl font-bold">How to Play</h2>
+      <p>Guess the hidden word by selecting letters. You have 6 chances before you lose!</p>
+      <p>Each incorrect guess adds to your mistakes. If you guess the word, your score will be saved.</p>
+    </div>
+  );
+}
